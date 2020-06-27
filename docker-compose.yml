@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  network-handler: 
+    build: ./networkHandler
+    volumes:
+      - type: bind
+        source: ./networkHandler/networkHandlerPipe
+        target: /networkHandlerPipe
+    ports:
+      -  5000:5000
