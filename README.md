@@ -4,8 +4,8 @@ Station requirements:
   1. pre-configured dietpi.img, ready to be copied to sd
       1. hotspot configured
       1. docker is installed
-      1. station setup docker is ready to run
-      1. station sensor docker is ready to run
+      1. builder docker is ready to run
+      1. dsensor docker is ready to run
       1. contains hotspot-toggle.sh
           1. takes in arguments to start or stop hotspot
 
