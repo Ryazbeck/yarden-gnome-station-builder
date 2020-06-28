@@ -1,6 +1,12 @@
 {
   "name": "svelte-app",
   "version": "1.0.0",
+  "description": "Serves page through captive AP to get wi-fi login for connecting",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Ryazbeck/yarden-gnome-station-builder"
+  },
+  "license": "UNLICENSED",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",

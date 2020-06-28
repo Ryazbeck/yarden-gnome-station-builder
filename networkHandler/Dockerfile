@@ -1,8 +1,9 @@
-FROM python:3.7-alpine
+FROM python:3.8-slim-buster
 
 COPY requirements.txt /
-COPY main.py /
+ADD main.py /
 
+RUN apt-get update && apt-get install -y iputils-ping
 RUN pip3 install -r requirements.txt
 
 ENV FLASK_APP main.py

@@ -1,4 +1,15 @@
 <script>
+	let ssid = null;
+	let wkey = null;
+	let disabled = false;
+
+	async function configureWifi(ssid,wkey) {
+		disabled = true;
+		let userData;
+		let user = await fetch(`http://localhost:5001/wifi_creds?ssid=${ssid}&key=${wkey}`)
+			.then(b => userData = b)
+			.then(setTimeout(() => { disabled = false }, 10000))		
+	}
 </script>
 
 <main>
@@ -8,14 +19,14 @@
 		<div>
 			SSID:<br />
 		</div>
-		<input type="text" id="ssid" name="ssid">
+		<input type="text" id="ssid" name="ssid" bind:value={ssid}>
 
 		<div>
 			Password:<br/>
 		</div>
-		<input type="text" id="wkey" name="wkey">
+		<input type="text" id="wkey" name="wkey" bind:value={wkey}>
 
-		<button on:click={console.log('test')}>Submit</button>
+		<button on:click={() => configureWifi(ssid, wkey)} disabled={disabled}>Submit</button>
 	</div>
 </main>
 

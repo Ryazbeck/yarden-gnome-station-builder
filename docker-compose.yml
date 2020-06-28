@@ -8,4 +8,19 @@ services:
         source: ./networkHandler/networkHandlerPipe
         target: /networkHandlerPipe
     ports:
-      -  5001:5001
+      - 5001:5001
+    networks:
+      - yg
+  web-server:
+    build: ./webServer
+    ports: 
+      - 5000
+    depends_on: 
+      - network-handler
+    links:
+      - network-handler
+    networks:
+      - yg
+
+networks:
+  yg:
