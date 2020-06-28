@@ -8,7 +8,7 @@
 		let userData;
 		let user = await fetch(`http://localhost:5001/wifi_creds?ssid=${ssid}&key=${wkey}`)
 			.then(b => userData = b)
-			.then(setTimeout(() => { disabled = false }, 10000))		
+			.then(setTimeout(() => { disabled = false }, 10000))
 	}
 </script>
 

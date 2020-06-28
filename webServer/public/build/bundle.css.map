@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../../App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\n\tlet ssid = null;\n\tlet wkey = null;\n\tasync function configureWifi(ssid,wkey) {\n\t\tlet userData;\n\t\tlet user = await fetch(`http://localhost:5001/wifi_creds?ssid=${ssid}&key=${wkey}`)\n\t\t\t.then(b => userData = b)\n\t\tconsole.log(userData)\n\t}\n</script>\n\n<main>\n\t<div class=\"form\">\n\t\t<h2>Yarden Gnome Station</h2>\n\t\t<h5>Connect to your wi-fi:</h5>\n\t\t<div>\n\t\t\tSSID:<br />\n\t\t</div>\n\t\t<input type=\"text\" id=\"ssid\" name=\"ssid\" bind:value={ssid}>\n\n\t\t<div>\n\t\t\tPassword:<br/>\n\t\t</div>\n\t\t<input type=\"text\" id=\"wkey\" name=\"wkey\" bind:value={wkey}>\n\n\t\t<button on:click={() => configureWifi(ssid, wkey)}>Submit</button>\n\t</div>\n</main>\n\n<style>\n\tmain {\n\t\tmax-width: 768px;\n\t\ttext-align: center;\n\t\tmargin: 0 auto;\n\t\theight: 100vh;\n\t}\n\t\n\tdiv {\n\t\ttext-align: left;\n\t}\n\n\t.form {\n\t\twidth: auto;\n\t\tmargin: 0 auto;\n\t\tmargin-top: 20vh;\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tpadding: 40px;\n\t}\n\n\th1 {\n\t\tcolor: #ff3e00;\n\t\ttext-transform: uppercase;\n\t\tfont-size: 4em;\n\t\tfont-weight: 100;\n\t}\n</style>"
+  ],
+  "names": [],
+  "mappings": "AA+BC,IAAI,cAAC,CAAC,AACL,SAAS,CAAE,KAAK,CAChB,UAAU,CAAE,MAAM,CAClB,MAAM,CAAE,CAAC,CAAC,IAAI,CACd,MAAM,CAAE,KAAK,AACd,CAAC,AAED,GAAG,cAAC,CAAC,AACJ,UAAU,CAAE,IAAI,AACjB,CAAC,AAED,KAAK,cAAC,CAAC,AACN,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,CAAC,CAAC,IAAI,CACd,UAAU,CAAE,IAAI,CAChB,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,OAAO,CAAE,IAAI,AACd,CAAC"
+}
